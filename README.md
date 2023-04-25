@@ -27,4 +27,10 @@ autoNLP.run_AutoNLP()
 
 Step 6:
 
+Run: cd ..
 Open the terminal and type: streamlit run app.py
+
+
+##If you want to Use GPT-3.5
+
+create a file called open_api_key.json in your home directory

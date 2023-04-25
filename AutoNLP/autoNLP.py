@@ -110,11 +110,6 @@ def run_AutoNLP():
         st.title("Clean Your Dataset")
 
         st.write("""The "Clean Your Dataset" feature allows you to clean text data in your dataset by removing unwanted elements such as URLs, HTML tags, numbers, punctuation, mentions, hashtags, line breaks, extra spaces, and commas. This can help improve the quality of your data and make it easier to analyze.""")
-        st.write("""To use this feature, select the "Clean" option from the sidebar and choose whether to keep text in uppercase using the checkbox provided. Then click the "Clean Datasets" button to apply the cleaning function to your dataset.""")
-        st.write("""The cleaned dataset will be displayed in a table and saved to a CSV file in the same directory as your Python file. Any spaces in the label column will also be removed to ensure consistency.""")
-        st.write("""Note that this feature uses the clean() function provided, which is based on regular expressions and may not work perfectly for all cases. It is recommended to review your cleaned dataset carefully to ensure it meets your needs.""")
-
-    
 
         keep_in_uppercase = st.checkbox("Keep Text in Uppercase")
         print(keep_in_uppercase)
@@ -269,14 +264,9 @@ def run_AutoNLP():
 
             for selected_model in selected_models:
 
-                try:
-                    word_embeddings = selected_model.split("__")[1]
-                    print(word_embeddings)
-                except:
-                    pass
+                word_embeddings = selected_word_embeddings
                 
-                selected_model = selected_model.split("__")[0]
-                print(selected_model)
+                selected_model = selected_model
 
                             
                 model_configs = {
