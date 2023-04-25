@@ -12,14 +12,14 @@ from sklearn.metrics import accuracy_score
 torch.cuda.empty_cache()
 
 
-from util.data import load_transposed_data
-from util.evaluate import evaluate_results
+from AutoNLP.util.data import load_transposed_data
+from AutoNLP.util.evaluate import evaluate_results
 
 os.environ["WANDB_DISABLED"] = "true"
 
 
 
-from util.evaluate import convert_2d_numpy_array_to_list, words_array_to_array
+from AutoNLP.util.evaluate import convert_2d_numpy_array_to_list, words_array_to_array
 
 # 4. TfidfVectorizer-LogisticRegression(BinaryRelavance)
 # TFidLRCC

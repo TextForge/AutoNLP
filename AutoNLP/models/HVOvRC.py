@@ -6,13 +6,13 @@ from sklearn.feature_extraction.text import HashingVectorizer
 from sklearn.metrics import accuracy_score
 from sklearn.multiclass import OneVsRestClassifier
 from sklearn.svm import LinearSVC
-from util.data import load_transposed_data
-from util.evaluate import convert_2d_numpy_array_to_list
+from AutoNLP.util.data import load_transposed_data
+from AutoNLP.util.evaluate import convert_2d_numpy_array_to_list
 
 torch.cuda.empty_cache()
 
 
-from util.evaluate import evaluate_results, words_array_to_array
+from AutoNLP.util.evaluate import evaluate_results, words_array_to_array
 
 os.environ["WANDB_DISABLED"] = "true"
 

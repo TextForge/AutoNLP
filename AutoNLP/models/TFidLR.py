@@ -1,4 +1,4 @@
-from util.evaluate import evaluate_results
+from AutoNLP.util.evaluate import evaluate_results
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline

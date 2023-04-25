@@ -2,8 +2,8 @@ import holoviews as hv
 from sklearn.metrics import accuracy_score
 
 hv.extension('bokeh')
-from util.data import load_transposed_data
-from util.evaluate import (convert_2d_numpy_array_to_list, evaluate_results,
+from AutoNLP.util.data import load_transposed_data
+from AutoNLP.util.evaluate import (convert_2d_numpy_array_to_list, evaluate_results,
                            words_array_to_array)
 
 

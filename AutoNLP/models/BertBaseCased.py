@@ -6,8 +6,8 @@ from datasets import Dataset
 from sklearn.metrics import accuracy_score
 from transformers import (AutoModelForSequenceClassification,
                           BertTokenizerFast, Trainer, TrainingArguments)
-from util.data import load_data_for_og
-from util.evaluate import evaluate_results
+from AutoNLP.util.data import load_data_for_og
+from AutoNLP.util.evaluate import evaluate_results
 
 os.environ["WANDB_DISABLED"] = "true"
 

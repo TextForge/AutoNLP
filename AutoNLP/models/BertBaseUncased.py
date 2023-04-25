@@ -11,8 +11,8 @@ torch.cuda.empty_cache()
 
 
 
-from util.data import load_data_for_og
-from util.evaluate import evaluate_results
+from AutoNLP.util.data import load_data_for_og
+from AutoNLP.util.evaluate import evaluate_results
 
 os.environ["WANDB_DISABLED"] = "true"
 

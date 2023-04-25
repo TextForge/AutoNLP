@@ -1,8 +1,8 @@
 import fasttext
 import numpy as np
 import pandas as pd
-from util.data import load_data_for_ft
-from util.evaluate import evaluate_results
+from AutoNLP.util.data import load_data_for_ft
+from AutoNLP.util.evaluate import evaluate_results
 
 class Fasttext():
     def __init__(self, dataset_name, train_df, test_df, parameters, ft_file):

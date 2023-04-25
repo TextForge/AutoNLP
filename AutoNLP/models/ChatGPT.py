@@ -1,7 +1,7 @@
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.pipeline import Pipeline
-from util.evaluate import evaluate_results
+from AutoNLP.util.evaluate import evaluate_results
 
 import pandas as pd
 import openai

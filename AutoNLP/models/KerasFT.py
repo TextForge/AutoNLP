@@ -22,8 +22,8 @@ from keras.preprocessing.text import Tokenizer
 #import OneHotEncoder
 from sklearn.preprocessing import OneHotEncoder
 
-from util.data import load_transposed_data
-from util.evaluate import convert_2d_numpy_array_to_list,words_array_to_array, evaluate_results
+from AutoNLP.util.data import load_transposed_data
+from AutoNLP.util.evaluate import convert_2d_numpy_array_to_list,words_array_to_array, evaluate_results
 
 # from toxic import load_transposed_data
 
