@@ -84,7 +84,7 @@ if os.path.exists('./test_dataset.csv'):
 def run_AutoNLP():
 
     with st.sidebar: 
-        st.image("logo-01.png")
+        # st.image("logo-01.png")
         st.title("Auto NLP")
         choice = st.radio("Navigation", ["Upload","Clean","Model Selection", "Augmentation Evaluation", "Run Multiple Models","Manual Modelling","Model Ensembling", "Download"])
         st.info("This project application helps you build Text Classification Pipelines")
