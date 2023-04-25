@@ -5,24 +5,24 @@ from operator import index
 import pandas as pd
 import streamlit as st
 
-from models.Albert import Albert
-from models.BertBaseCased import BertBaseCased
-from models.BertBaseUncased import BertBaseUncased
-from models.BOWrf import BOWrf
+from AutoNLP.models.Albert import Albert
+from AutoNLP.models.BertBaseCased import BertBaseCased
+from AutoNLP.models.BertBaseUncased import BertBaseUncased
+from AutoNLP.models.BOWrf import BOWrf
 
-from models.DistilBertCased import DistilBertCased
-from models.DistilBertUncased import DistilBertUncased
-from models.DistilBertUncasedFinetuned import DistilBertUncasedFinetuned
-from models.Fasttext import Fasttext
-from models.HVOvRC import HVOvRC
-from models.KerasCBOW import KerasCBOW
-from models.KerasCBOW_GRU import KerasCBOW_GRU
-from models.KerasFT import KerasFT
-from models.KerasFT_GRU import KerasFT_GRU
-from models.TFidLR import TFidLR
-from models.TFidLRCC import TFidLRCC
-from models.TFidRF import TFidRF
-from models.Xlnet import Xlnet
+from AutoNLP.models.DistilBertCased import DistilBertCased
+from AutoNLP.models.DistilBertUncased import DistilBertUncased
+from AutoNLP.models.DistilBertUncasedFinetuned import DistilBertUncasedFinetuned
+from AutoNLP.models.Fasttext import Fasttext
+from AutoNLP.models.HVOvRC import HVOvRC
+from AutoNLP.models.KerasCBOW import KerasCBOW
+from AutoNLP.models.KerasCBOW_GRU import KerasCBOW_GRU
+from AutoNLP.models.KerasFT import KerasFT
+from AutoNLP.models.KerasFT_GRU import KerasFT_GRU
+from AutoNLP.models.TFidLR import TFidLR
+from AutoNLP.models.TFidLRCC import TFidLRCC
+from AutoNLP.models.TFidRF import TFidRF
+from AutoNLP.models.Xlnet import Xlnet
 
 from util.clean import clean
 
