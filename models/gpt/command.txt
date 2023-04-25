@@ -1,0 +1,7 @@
+python train.py --data_file data/SMSSpamCollection --epoch 5 --warmup 20 --model_name SMSSpam --max_len 25 --learning_rate 0.1 --batch 128
+
+
+
+python generate.py --model_name gpt2_medium_spamham_4.pt --sentences 10 --label SPAM
+
+
