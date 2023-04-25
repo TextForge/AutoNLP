@@ -2,17 +2,21 @@ import os
 import time
 from operator import index
 
+import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import streamlit as st
+from sklearn.metrics import confusion_matrix, precision_recall_curve, roc_curve
 
 from AutoNLP.models.Albert import Albert
 from AutoNLP.models.BertBaseCased import BertBaseCased
 from AutoNLP.models.BertBaseUncased import BertBaseUncased
 from AutoNLP.models.BOWrf import BOWrf
-
+from AutoNLP.models.ChatGPT import ChatGPT
 from AutoNLP.models.DistilBertCased import DistilBertCased
 from AutoNLP.models.DistilBertUncased import DistilBertUncased
-from AutoNLP.models.DistilBertUncasedFinetuned import DistilBertUncasedFinetuned
+from AutoNLP.models.DistilBertUncasedFinetuned import \
+    DistilBertUncasedFinetuned
 from AutoNLP.models.Fasttext import Fasttext
 from AutoNLP.models.HVOvRC import HVOvRC
 from AutoNLP.models.KerasCBOW import KerasCBOW
@@ -23,24 +27,8 @@ from AutoNLP.models.TFidLR import TFidLR
 from AutoNLP.models.TFidLRCC import TFidLRCC
 from AutoNLP.models.TFidRF import TFidRF
 from AutoNLP.models.Xlnet import Xlnet
-
 from AutoNLP.util.clean import clean
 
-from AutoNLP.models.ChatGPT import ChatGPT
-
-
-
-
-
-
-
-
-
-
-
-
-
-from sklearn.metrics import confusion_matrix, roc_curve, precision_recall_curve
 # from sklearn.metrics import plot_confusion_matrix, plot_roc_curve, plot_precision_recall_curve
 
 
@@ -57,8 +45,6 @@ from sklearn.metrics import confusion_matrix, roc_curve, precision_recall_curve
 
 
 
-import matplotlib.pyplot as plt
-import numpy as np
 
 
 def plot_confusion_matrix(df_confusion, title='Confusion matrix', cmap=plt.cm.gray_r):
@@ -74,14 +60,16 @@ def plot_confusion_matrix(df_confusion, title='Confusion matrix', cmap=plt.cm.gr
 
 
 
-if os.path.exists('./train_dataset.csv'): 
-    df_train = pd.read_csv('train_dataset.csv', index_col=None)
-
-if os.path.exists('./test_dataset.csv'): 
-    df_test = pd.read_csv('test_dataset.csv', index_col=None)
-
-
 def run_AutoNLP():
+
+
+
+    if os.path.exists('./train_dataset.csv'): 
+        df_train = pd.read_csv('train_dataset.csv', index_col=None)
+
+    if os.path.exists('./test_dataset.csv'): 
+        df_test = pd.read_csv('test_dataset.csv', index_col=None)
+
 
     with st.sidebar: 
         # st.image("logo-01.png")
@@ -121,13 +109,12 @@ def run_AutoNLP():
 
         st.title("Clean Your Dataset")
 
-        st.write("""The "Clean Your Dataset" feature allows you to clean text data in your dataset by removing unwanted elements such as URLs, HTML tags, numbers, punctuation, mentions, hashtags, line breaks, extra spaces, and commas. This can help improve the quality of your data and make it easier to analyze.
+        st.write("""The "Clean Your Dataset" feature allows you to clean text data in your dataset by removing unwanted elements such as URLs, HTML tags, numbers, punctuation, mentions, hashtags, line breaks, extra spaces, and commas. This can help improve the quality of your data and make it easier to analyze.""")
+        st.write("""To use this feature, select the "Clean" option from the sidebar and choose whether to keep text in uppercase using the checkbox provided. Then click the "Clean Datasets" button to apply the cleaning function to your dataset.""")
+        st.write("""The cleaned dataset will be displayed in a table and saved to a CSV file in the same directory as your Python file. Any spaces in the label column will also be removed to ensure consistency.""")
+        st.write("""Note that this feature uses the clean() function provided, which is based on regular expressions and may not work perfectly for all cases. It is recommended to review your cleaned dataset carefully to ensure it meets your needs.""")
 
-    To use this feature, select the "Clean" option from the sidebar and choose whether to keep text in uppercase using the checkbox provided. Then click the "Clean Datasets" button to apply the cleaning function to your dataset.
-
-    The cleaned dataset will be displayed in a table and saved to a CSV file in the same directory as your Python file. Any spaces in the label column will also be removed to ensure consistency.
-
-    Note that this feature uses the clean() function provided, which is based on regular expressions and may not work perfectly for all cases. It is recommended to review your cleaned dataset carefully to ensure it meets your needs.""")
+    
 
         keep_in_uppercase = st.checkbox("Keep Text in Uppercase")
         print(keep_in_uppercase)
